@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myan-to-eng</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            margin-top: 10%;
+            flex-direction: column;
+            justify-content: center;
+            background: #1f8cc3;
+        }
+        .container{
+            width: 400px;
+            text-align: center;
+            display: block;
+            padding: 10px;
+            border: 1px solid rgb(73, 28, 28);
+            background: #6032d4;
+            border-radius: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        Product Price:
+        <input type="text" id="product" style="margin-bottom: 10px;">
+        <br>
+        Delivery Price:
+        <input type="text" id="delivery">
+        <p>Total: <span id="result"></span></p>
+    </div>
+    <script>
+        let num1 = document.getElementById("product");
+        let num2 = document.getElementById("delivery");
+
+        function mn2en(input) {  
+        input = input.replace("၀",0);
+        input = input.replace("၁",1);
+        input = input.replace("၂", 2);
+        input = input.replace("၃", 3);
+        input = input.replace("၄", 4);
+        input = input.replace("၅", 5);
+        input = input.replace("၆", 6);
+        input = input.replace("၇", 7);
+        input = input.replace("၈", 8);
+        input = input.replace("၉", 9);
+
+        return parseInt(input);
+        };
+
+       num1.addEventListener('keyup', (e) => {
+        let num1Val = e.target.value;
+        document.getElementById('result').innerHTML = mn2en(num1Val);
+        
+       });
+
+       num2.addEventListener('keyup', (e) => {
+        let num1Val = mn2en(num1.value);
+        let num2Val = mn2en(e.target.value); 
+        document.getElementById("result").innerHTML =  num1Val + num2Val;
+       });
+    </script>
+</body>
+</html>

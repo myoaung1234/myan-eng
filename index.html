@@ -39,16 +39,16 @@
         let num2 = document.getElementById("delivery");
 
         function mn2en(input) {  
-        input = input.replace("၀",0);
-        input = input.replace("၁",1);
-        input = input.replace("၂", 2);
-        input = input.replace("၃", 3);
-        input = input.replace("၄", 4);
-        input = input.replace("၅", 5);
-        input = input.replace("၆", 6);
-        input = input.replace("၇", 7);
-        input = input.replace("၈", 8);
-        input = input.replace("၉", 9);
+        input = input.replaceAll("၀",0);
+        input = input.replaceAll("၁",1);
+        input = input.replaceAll("၂", 2);
+        input = input.replaceAll("၃", 3);
+        input = input.replaceAll("၄", 4);
+        input = input.replaceAll("၅", 5);
+        input = input.replaceAll("၆", 6);
+        input = input.replaceAll("၇", 7);
+        input = input.replaceAll("၈", 8);
+        input = input.replaceAll("၉", 9);
 
         return parseInt(input);
         };
